@@ -26,7 +26,6 @@ DefaultTableModel boleta;
     public Client_VisualizarBoleta() {
         initComponents();
         
-        lblLogo.setIcon(setIcono("/imagenes_interfaces/logo2.jpeg", lblLogo));
         lblCliente.setText(Ventana_info_cliente.Nombres+" "+Ventana_info_cliente.Apellidos);
         lblDNI.setText(Ventana_info_cliente.Dni);
         lblCorreo.setText(Ventana_info_cliente.Correo);
@@ -65,7 +64,7 @@ DefaultTableModel boleta;
 		boleta.setRowCount(0);
 		Object[] fila = {
 		Login_clienteRegistrado.cantidad, 
-                "Artíuclo de joyería modelo "+Login_clienteRegistrado.Id_articulo+", medida "+Login_clienteRegistrado.medida+" en "+Login_clienteRegistrado.material+" con peso de "+Login_clienteRegistrado.peso,
+                "Artíuclo de joyería modelo "+Login_clienteRegistrado.Id_articulo+", con detalles de "+Login_clienteRegistrado.medida+" en "+Login_clienteRegistrado.material+" con peso de "+Login_clienteRegistrado.peso,
 		Ventana_info_cliente.montoTotal/Login_clienteRegistrado.cantidad,
                 Ventana_info_cliente.montoTotal};
 		boleta.addRow(fila);
@@ -90,103 +89,84 @@ DefaultTableModel boleta;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         lblCliente = new javax.swing.JLabel();
         lblDNI = new javax.swing.JLabel();
         lblCorreo = new javax.swing.JLabel();
         jScrollPane = new javax.swing.JScrollPane();
         tblBoleta = new javax.swing.JTable();
         lblTelefono = new javax.swing.JLabel();
-        lblContrasenia = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblVuelto = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        lblContrasenia = new javax.swing.JLabel();
         lblBoleta = new javax.swing.JLabel();
-        lblFondo1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 190, 170));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Teléfono:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 70, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 90, 20));
 
-        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel2.setText("Confección de joyas de Oro de");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 230, 20));
-
-        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel4.setText("18k y plata 950");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 120, -1));
-
-        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Recibe un vuelto de: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 150, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 210, -1));
 
-        jLabel5.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel5.setText("Correo. jairocornejovega@gmail.com");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 240, -1));
-
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel8.setText("Boleta:            N° ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 120, 20));
-
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Cliente:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 70, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 90, 20));
 
-        jLabel6.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel6.setText("Cel. 912403610");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 120, -1));
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel9.setText("Contraseña:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 100, 20));
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Correo:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 60, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 80, 20));
 
-        jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Fecha:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 70, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 90, 20));
 
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 301, 740, -1));
-
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("DNI:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 50, 20));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 70, 20));
 
-        jLabel7.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel7.setText("Jr. Huallaga N° 533 Tda 712 - Cercado de Lima");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 310, -1));
-        getContentPane().add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 250, 20));
-        getContentPane().add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 100, 20));
-        getContentPane().add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 230, 20));
+        lblCliente.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblCliente.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 250, 20));
 
+        lblDNI.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblDNI.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, 110, 20));
+
+        lblCorreo.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblCorreo.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 230, 20));
+
+        tblBoleta.setBackground(new java.awt.Color(255, 204, 204));
+        tblBoleta.setFont(new java.awt.Font("Felix Titling", 0, 12)); // NOI18N
+        tblBoleta.setForeground(new java.awt.Color(0, 0, 0));
         tblBoleta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -206,30 +186,100 @@ DefaultTableModel boleta;
                 return canEdit [columnIndex];
             }
         });
+        tblBoleta.setFillsViewportHeight(true);
         jScrollPane.setViewportView(tblBoleta);
 
-        getContentPane().add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 720, 130));
-        getContentPane().add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 230, 20));
-        getContentPane().add(lblContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 51, 100, 20));
-        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 100, 20));
-        getContentPane().add(lblVuelto, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 90, 20));
-        getContentPane().add(lblBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 80, 20));
+        getContentPane().add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 760, 100));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 530));
+        lblTelefono.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 230, 20));
+
+        lblFecha.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 120, 20));
+
+        lblVuelto.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblVuelto.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lblVuelto, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 90, 20));
+
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/ok.png"))); // NOI18N
+        jButton2.setText("   OK");
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 102, 50));
+
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Jr. Huallaga N° 533 Tda 712 - Cercado de Lima");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 390, -1));
+
+        jLabel5.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Correo. jairocornejovega@gmail.com");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 320, -1));
+
+        jLabel6.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Cel. 912403610");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 140, -1));
+
+        jLabel4.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("18k y plata 950");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 140, -1));
+
+        jLabel2.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Confección de joyas de Oro de");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 250, -1));
+
+        jLabel9.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Contraseña:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, -1));
+
+        lblContrasenia.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblContrasenia.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(lblContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 120, 20));
+
+        lblBoleta.setFont(new java.awt.Font("Candara Light", 1, 15)); // NOI18N
+        lblBoleta.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(lblBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 110, 20));
+
+        jLabel8.setFont(new java.awt.Font("Elephant", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Boleta:            N° ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 140, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 430, 210));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/chica_boleta.png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 440, 400));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_flores(boleta).jpg"))); // NOI18N
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
         Ventana_info_cliente vic = new Ventana_info_cliente();
         vic.setLocationRelativeTo(null);
         vic.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,12 +317,14 @@ DefaultTableModel boleta;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -281,16 +333,14 @@ DefaultTableModel boleta;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBoleta;
     private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblContrasenia;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblDNI;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblFondo1;
-    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblVuelto;
     private javax.swing.JTable tblBoleta;

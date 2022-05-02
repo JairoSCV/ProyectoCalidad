@@ -86,30 +86,39 @@ public class Trabaj_RegistroTrabajos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTrab = new javax.swing.JTable();
         btnEditar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lblFondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("<html>En esta sección usted tendrá acceso a u registro de trabajos donde podrá solicitar el material necesario para la fabricación. A su vez, también podrá editar el registro pero unicamente el \"ESTADO DE FABRICACIÓN\", para saber si el trabajo está: \"SIN FABRICAR\",\"FABRICANDO\" o \"TERMINADO\".</html>");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 45, 575, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 575, 50));
 
-        jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("REGISTRO DE TRABAJOS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 12, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, -1));
 
-        btnSolicitar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnSolicitar.setText("Solicitar Material");
+        btnSolicitar.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/solicitud_material.png"))); // NOI18N
         btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSolicitarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 464, -1, -1));
+        getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 110, 100));
 
+        tblTrab.setBackground(new java.awt.Color(255, 153, 153));
+        tblTrab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        tblTrab.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        tblTrab.setForeground(new java.awt.Color(255, 255, 255));
         tblTrab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -120,7 +129,20 @@ public class Trabaj_RegistroTrabajos extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblTrab.setFocusable(false);
+        tblTrab.setGridColor(new java.awt.Color(204, 204, 204));
+        tblTrab.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tblTrab.setSelectionForeground(new java.awt.Color(255, 255, 255));
         tblTrab.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tblTrabKeyReleased(evt);
@@ -128,40 +150,44 @@ public class Trabaj_RegistroTrabajos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTrab);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 101, 613, 348));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 101, 613, 280));
 
-        btnEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEditar.setText("Editar Estado");
+        btnEditar.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/editar_estado.png"))); // NOI18N
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 460, 130, 31));
+        getContentPane().add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 110, 100));
 
-        jButton3.setText("<  Regresar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 466, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Solicitar Material");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 120, -1));
+
+        jLabel4.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Editar Estado");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 120, -1));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 520));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_rosa.png.jpg"))); // NOI18N
+        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 400));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        dispose();
-        Ventana_Trabajador vt=new Ventana_Trabajador();
-        vt.setLocationRelativeTo(null);
-        vt.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         try{
@@ -249,6 +275,13 @@ public class Trabaj_RegistroTrabajos extends javax.swing.JFrame {
     private void tblTrabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblTrabKeyReleased
 
     }//GEN-LAST:event_tblTrabKeyReleased
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        Ventana_Trabajador vt=new Ventana_Trabajador();
+        vt.setLocationRelativeTo(null);
+        vt.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -287,9 +320,11 @@ public class Trabaj_RegistroTrabajos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnSolicitar;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFondo1;
     private javax.swing.JTable tblTrab;

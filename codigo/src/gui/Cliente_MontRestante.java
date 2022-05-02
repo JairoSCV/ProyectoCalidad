@@ -30,14 +30,19 @@ public class Cliente_MontRestante extends javax.swing.JFrame {
         txtBoleta.setText(Login_clienteRegistrado.N_Boleta);
         txtMontoA.setText(""+Ventana_info_cliente.montoA);
         txtMontoT.setText(""+Ventana_info_cliente.montoTotal);
+        
+        TextPrompt monto = new TextPrompt("Solo dígitos",txtMontoRestante);
     }
     arreglo_clases.Arreglo_Ventas av = new Arreglo_Ventas();
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         txtBoleta = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -46,81 +51,101 @@ public class Cliente_MontRestante extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtMontoRestante = new javax.swing.JTextField();
         txtMontoA = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        lblFondo1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setText("Nº Boleta:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("PAGAR MONTO RESTANTE");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 360, -1));
 
-        txtBoleta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txtBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 50, 20));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar.png"))); // NOI18N
+        jButton4.setContentAreaFilled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 80, 80));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Monto amortiguado:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("Monto total:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
-
-        txtMontoT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 50, 20));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 230, 10));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Monto restante:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
-        getContentPane().add(txtMontoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 100, -1));
-
-        txtMontoA.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 50, 20));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("<  Cancelar");
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 80, 80));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Pagar monto restante");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jPanel2.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Nº Boleta:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        txtBoleta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtBoleta.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 20));
+
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Monto amortiguado:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Monto total:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, -1));
+
+        txtMontoT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtMontoT.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 100, 20));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 280, 10));
+
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Monto restante:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        txtMontoRestante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMontoRestanteKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        jPanel2.add(txtMontoRestante, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 100, -1));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 430));
+        txtMontoA.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtMontoA.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 310, 200));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_reg_pedido.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 310));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public static double vuelto = 0.0;
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         dispose();
         Ventana_info_cliente vic = new Ventana_info_cliente();
         vic.setLocationRelativeTo(null);
         vic.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    public static double vuelto = 0.0;
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int r=JOptionPane.showConfirmDialog(null, "¿Está seguro de cancelar el pedido?");
         if(r==0){
             double montoRestante_pagar = Double.parseDouble(txtMontoRestante.getText().trim());
@@ -142,7 +167,16 @@ public class Cliente_MontRestante extends javax.swing.JFrame {
                 mensaje("¡Monto insuficiente!");
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtMontoRestanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoRestanteKeyTyped
+        if(!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar()!='.'){
+            evt.consume();
+        }
+        if(evt.getKeyChar()=='.' && txtMontoRestante.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMontoRestanteKeyTyped
 
      void mensaje(String s) {
 	JOptionPane.showMessageDialog(this, s);
@@ -209,14 +243,15 @@ public class Cliente_MontRestante extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFondo1;
     private javax.swing.JLabel txtBoleta;
     private javax.swing.JLabel txtMontoA;
     private javax.swing.JTextField txtMontoRestante;

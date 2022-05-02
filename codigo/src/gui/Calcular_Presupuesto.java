@@ -26,12 +26,8 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(lblIcono.getWidth()-1, lblIcono.getHeight()-1, Image.SCALE_DEFAULT));
         lblIcono.setIcon(icono);
         
-        btnCalcular.setIcon(setIcono("/imagenes_complementarias/dinero.png", btnCalcular));
-        btnCalcular.setPressedIcon(setIconoPresionado("/imagenes_complementarias/dinero.png", btnCalcular, 4, 4));
-        btnRetro.setIcon(setIcono("/imagenes_interfaces/retroceder.png", btnRetro));
-        btnRetro.setPressedIcon(setIconoPresionado("/imagenes_interfaces/retroceder.png", btnRetro, 9, 9));
-        btnConfirmar.setIcon(setIcono("/imagenes_complementarias/confirmar.png", btnConfirmar));
-        btnConfirmar.setPressedIcon(setIconoPresionado("/imagenes_complementarias/confirmar.png", btnConfirmar, 9, 9));
+        
+        TextPrompt peso = new TextPrompt("Valores reales(min: 3, máx: 100)",txtPeso);
     }
 
     /**
@@ -43,8 +39,6 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -58,54 +52,63 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
         btnRetro = new javax.swing.JButton();
         lblIcono = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lblFondo1 = new javax.swing.JLabel();
-
-        jLabel4.setText("jLabel4");
-
-        jButton3.setText("jButton3");
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("CALCULAR PRESUPUESTO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 320, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 20));
 
         jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Peso (gr.) : ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Material:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Monto total calculado:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         comBox.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         comBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORO", "PLATA", "BRONCE" }));
-        getContentPane().add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 93, 30));
-        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 93, -1));
+        getContentPane().add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 160, 20));
+
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPesoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 160, -1));
 
         txtTotal.setEditable(false);
-        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 83, -1));
+        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 160, -1));
 
         btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
         btnConfirmar.setContentAreaFilled(false);
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 80, 70));
+        getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 90, 90));
 
         jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("<html>Esta ventana es para calcular el monto total aproximado del artículo a fabricar. Si desea puede saltarse esta ventana y seleccionar \"Confirmar Solicitud\"</html>");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 53, 300, 60));
 
         btnCalcular.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCalcular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar_pago.png"))); // NOI18N
         btnCalcular.setBorder(null);
         btnCalcular.setContentAreaFilled(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -113,25 +116,25 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 80, 80));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 80, 80));
 
+        btnRetro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/retroceder.png"))); // NOI18N
         btnRetro.setContentAreaFilled(false);
         btnRetro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetroActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 60, 40));
+        getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 60, 60));
         getContentPane().add(lblIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 100, 100));
 
         jLabel6.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         jLabel6.setText("Calcular");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 50, -1));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 390));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/Fondo_Ventana_Tbr.jpg"))); // NOI18N
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 7));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 330));
 
         pack();
         setLocationRelativeTo(null);
@@ -168,6 +171,15 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
         mensaje("REGISTRO DE SOLICITUD CANCELADA");
         }
     }//GEN-LAST:event_btnRetroActionPerformed
+
+    private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
+        if(!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar()!='.'){
+            evt.consume();
+        }
+        if(evt.getKeyChar()=='.' && txtPeso.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPesoKeyTyped
     
     private double Calculo(String s,double peso){
         switch (s) {
@@ -238,15 +250,13 @@ public class Calcular_Presupuesto extends javax.swing.JFrame {
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnRetro;
     private javax.swing.JComboBox<String> comBox;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel lblFondo1;
     private javax.swing.JLabel lblIcono;
     private javax.swing.JTextField txtPeso;
     private javax.swing.JTextField txtTotal;

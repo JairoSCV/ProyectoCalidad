@@ -28,21 +28,11 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
         initComponents();
         txtPass_Cliente.setVisible(true);
         txtPass_Cliente_Visible.setVisible(false);
-        ImageIcon imagen = new ImageIcon("src/imagenes_interfaces/cliente.png");
-        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(lblIcono_Cliente.getWidth(), lblIcono_Cliente.getHeight(), Image.SCALE_DEFAULT));
-        lblIcono_Cliente.setIcon(icono);
         
         //boton ver
         btnVer.setIcon(setIcono("/imagenes_interfaces/ver.png", btnVer));
         btnVer.setPressedIcon(setIconoPresionado("/imagenes_interfaces/ver.png", btnVer, 3, 3));
         
-        //boton atras
-        btnAtras.setIcon(setIcono("/imagenes_interfaces/atras.png", btnAtras));
-        btnAtras.setPressedIcon(setIconoPresionado("/imagenes_interfaces/atras.png", btnAtras, 3, 3));
-        
-        //boton ingresar
-        btnIngresar.setIcon(setIcono("/imagenes_interfaces/siguiente.png", btnIngresar));
-        btnIngresar.setPressedIcon(setIconoPresionado("/imagenes_interfaces/siguiente.png", btnIngresar, 9, 9));
     }
 
     /** This method is called from within the constructor to
@@ -79,6 +69,7 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
 
         btnAtras.setBackground(new java.awt.Color(255, 255, 153));
         btnAtras.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/atras.png"))); // NOI18N
         btnAtras.setContentAreaFilled(false);
         btnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -93,14 +84,17 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
         getContentPane().add(txtPass_Cliente_Visible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 143, -1));
 
         jLabel1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Atrás");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 50, 20));
 
         jLabel4.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("N° Boleta:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 208, 90, 24));
 
         jLabel5.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Contraseña:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 120, -1));
 
@@ -115,6 +109,7 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
 
         btnIngresar.setBackground(new java.awt.Color(255, 255, 153));
         btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
         btnIngresar.setContentAreaFilled(false);
         btnIngresar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnIngresar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -123,11 +118,12 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 275, 70, 70));
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 70, 70));
 
         lblIcono_Cliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono_Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cliente.png"))); // NOI18N
         lblIcono_Cliente.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(lblIcono_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 160, 140));
+        getContentPane().add(lblIcono_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 160, 160));
 
         lblFondo.setBackground(new java.awt.Color(0, 0, 0));
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_general.jpg"))); // NOI18N
@@ -212,14 +208,24 @@ public class Login_clienteRegistrado extends javax.swing.JFrame {
                         mensaje("¡¡¡BIENVENIDO!!!");
                         dispose();
                         
-                        String sentencia_buscar_ArticuloPedido = ("SELECT N_BOLETA, ID_ARTICULO, MEDIDA, MATERIAL, PESO, MONTO_AMORTIGUADO, CANTIDAD, FABRICACION, ENTREGA_TRABAJO, PAGO_ESTADO, ENTREGA_MATERIAL FROM articulo_pedido WHERE N_boleta = '"+nroboleta+"'");
+                        String sentencia_buscar_ArticuloPedido = ("SELECT N_BOLETA, SOLICITUD_A, MEDIDA, MATERIAL, PESO, MONTO_AMORTIGUADO, CANTIDAD, FABRICACION, ENTREGA_TRABAJO, PAGO_ESTADO, ENTREGA_MATERIAL FROM articulo_pedido WHERE N_boleta = '"+nroboleta+"'");
                         PreparedStatement pstArticulo_pedido = cn.prepareStatement(sentencia_buscar_ArticuloPedido);
                         
                         ResultSet resultado_articulopedido = pstArticulo_pedido.executeQuery();
                         
                         if(resultado_articulopedido.next()){
+                            //Guardamos el número de solicitud
+                            String n_solicitud = resultado_articulopedido.getString("SOLICITUD_A");
+                            
+                            String sentencia_buscar_Articulo = ("SELECT SOLICITUD, ID, DIRECCION_CASA, ESTADO from DIRECCION WHERE SOLICITUD = '"+n_solicitud+"'");
+                            PreparedStatement pstArticulo = cn.prepareStatement(sentencia_buscar_Articulo);
+
+                            ResultSet resultado_articulo = pstArticulo.executeQuery();
+
+                            if(resultado_articulo.next()){
+                                Id_articulo =resultado_articulo.getString("ID");
+                            }
                             N_Boleta = resultado_articulopedido.getString("N_BOLETA");
-                            Id_articulo = resultado_articulopedido.getString("ID_ARTICULO");
                             medida = resultado_articulopedido.getString("MEDIDA");
                             material = resultado_articulopedido.getString("MATERIAL");
                             peso = resultado_articulopedido.getDouble("PESO");

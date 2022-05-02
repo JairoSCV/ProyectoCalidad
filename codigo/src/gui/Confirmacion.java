@@ -16,7 +16,7 @@ public class Confirmacion extends javax.swing.JFrame {
      */
     public Confirmacion() {
         initComponents();
-        jLabel1.setText("<html><center>Se le notifica que su trabajo solicitado "+Login_clienteRegistrado.model_articulo+" <p>ya ha sido terminado, ya puede cancelar el monto restante<p>y esperar a que un encargado acuda a su hogar a entregarle su pedido.<p><p>¡GRACIAS POR SU PREFERENCIA!<center><html>");
+        jLabel1.setText("<html><center>Se le notifica que su trabajo solicitado <p>ya ha sido terminado, ya puede cancelar el monto restante<p>y esperar a que un encargado acuda a su hogar a entregarle su pedido.<p><p>¡GRACIAS POR SU PREFERENCIA!<center></html>");
         new Ventana_info_cliente().setVisible(true);
     }
 
@@ -29,38 +29,34 @@ public class Confirmacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblFondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        lblFondo1 = new javax.swing.JLabel();
-        lblFondo2 = new javax.swing.JLabel();
-
-        lblFondo.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("OK");
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/ok.png"))); // NOI18N
+        jButton1.setText("   OK");
+        jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 197, 102, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 197, 102, 50));
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("<html><center>Se le notifica que su trabajo solicitado (ID_ARTICULO) <p>ya ha sido terminado, ya puede cancelar el monto restante<p>y esperar a que un encargado acuda a su hogar a entregarle su pedido.<p><p>¡GRACIAS POR SU PREFERENCIA!<center><html>");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 24, 336, 161));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 336, 161));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 180, 260));
-
-        lblFondo2.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 260));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_flores.jpg"))); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 153), null));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 260));
 
         pack();
         setLocationRelativeTo(null);
@@ -108,8 +104,6 @@ public class Confirmacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblFondo1;
-    private javax.swing.JLabel lblFondo2;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

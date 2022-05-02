@@ -6,6 +6,7 @@
 package gui;
 
 import Conex.Conexion;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -21,6 +22,17 @@ public class Agregar_Usuario extends javax.swing.JFrame {
      */
     public Agregar_Usuario() {
         initComponents();
+        //Datos persona
+        TextPrompt prueba = new TextPrompt("8 dígitos",txtDni);
+        TextPrompt prueba1 = new TextPrompt("Obligatorio",txtNombre);
+        TextPrompt prueba2 = new TextPrompt("Obligatorio",txtApellido);
+        TextPrompt prueba3 = new TextPrompt("Obligatorio",txtCorreo);
+        TextPrompt prueba4 = new TextPrompt("Solo dígitos",txtTelefono);
+        
+        //Datos usuario
+        TextPrompt user = new TextPrompt("Obligatorio", txtID);
+        TextPrompt contra = new TextPrompt("Obligatorio", txtContra);
+        TextPrompt contra1 = new TextPrompt("Obligatorio", txtConfContra);
     }
 
     /**
@@ -32,118 +44,189 @@ public class Agregar_Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        comboBox = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        btnConfirmar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
         txtTelefono = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
-        txtContra = new javax.swing.JPasswordField();
         txtDni = new javax.swing.JTextField();
-        txtConfContra = new javax.swing.JPasswordField();
+        txtCorreo = new javax.swing.JTextField();
+        comboBox = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
+        txtContra = new javax.swing.JPasswordField();
+        txtConfContra = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        lblFondo1 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel2.setText("Nombres:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 69, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel3.setText("Apellidos:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 97, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("AGREGAR USUARIO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 23, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 23, 290, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel6.setText("DNI:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 69, -1, -1));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 80, 80));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel5.setText("Contraseña:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 209, -1, -1));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar.png"))); // NOI18N
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 80, 80));
+
+        jPanel1.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Nombres:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Apellidos:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("DNI:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Correo:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Cargo:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Celular:");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 150, -1));
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 150, -1));
+
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 150, -1));
+
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
+
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 150, -1));
 
         comboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Encargado", "Trabajador" }));
-        getContentPane().add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 134, 108, -1));
+        jPanel1.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 150, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel7.setText("Correo:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 100, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 340, 210));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel8.setText("Cargo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 138, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        btnConfirmar.setText("Confirmar nuevo usuario");
-        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmarActionPerformed(evt);
+        jLabel17.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("ID:");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Confirmar Contraseña:");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Contraseña:");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDKeyTyped(evt);
             }
         });
-        getContentPane().add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 184, 178, 40));
+        jPanel2.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 110, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel11.setText("Confirmar Contraseña:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 234, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel9.setText("Telefono:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 127, -1, -1));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 68, 100, -1));
-        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 96, 100, -1));
-
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+        txtContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContraKeyTyped(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 242, -1, -1));
-        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 128, 100, -1));
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 99, 124, -1));
-        getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 208, 90, -1));
-        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 68, 100, -1));
-        getContentPane().add(txtConfContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 233, 90, -1));
-        getContentPane().add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 183, 90, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 163, 245, -1));
+        jPanel2.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel4.setText("ID: ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 184, -1, -1));
+        txtConfContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtConfContraKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtConfContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 110, -1));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 290));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 340, 100));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/add_user.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 70, 70));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_reg_pedido.jpg"))); // NOI18N
+        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        AgregaUsuario();
-        dispose();
-        Gestionar_Usuarios gu = new Gestionar_Usuarios();
-        gu.setLocationRelativeTo(null);
-        gu.setVisible(true);
-    }//GEN-LAST:event_btnConfirmarActionPerformed
     
     void AgregaUsuario(){
         Conexion cc = new Conexion();
@@ -250,12 +333,100 @@ public class Agregar_Usuario extends javax.swing.JFrame {
     void mensaje(String s) {
 		JOptionPane.showMessageDialog(this, s);
     }
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AgregaUsuario();
+        dispose();
+        Gestionar_Usuarios gu = new Gestionar_Usuarios();
+        gu.setLocationRelativeTo(null);
+        gu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
         Gestionar_Usuarios gu=new Gestionar_Usuarios();
         gu.setLocationRelativeTo(null);
         gu.setVisible(true);
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtNombre.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtApellido.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtTelefono.getText().length() >= 9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtDni.getText().length() >= 8){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
+
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+       if(txtID.getText().length() >= 10){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtIDKeyTyped
+
+    private void txtCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyTyped
+       if(txtCorreo.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtCorreoKeyTyped
+
+    private void txtContraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraKeyTyped
+        if(txtContra.getText().length() >= 20){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtContraKeyTyped
+
+    private void txtConfContraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfContraKeyTyped
+        if(txtConfContra.getText().length() >= 20){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtConfContraKeyTyped
     /**
      * @param args the command line arguments
      */
@@ -292,21 +463,23 @@ public class Agregar_Usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnConfirmar;
     private javax.swing.JComboBox<String> comboBox;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFondo1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JPasswordField txtConfContra;
     private javax.swing.JPasswordField txtContra;

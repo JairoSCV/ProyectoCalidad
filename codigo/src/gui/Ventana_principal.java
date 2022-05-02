@@ -6,6 +6,7 @@
 package gui;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,6 +25,7 @@ public class Ventana_principal extends javax.swing.JDialog {
     public Ventana_principal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+                
         btnAdmin.setIcon(setIcono("/imagenes/admin.png", btnAdmin));
         btnAdmin.setPressedIcon(setIconoPresionado("/imagenes/admin.png", btnAdmin, 20, 20));
         
@@ -59,16 +61,19 @@ public class Ventana_principal extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         btnClientes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         lblFondo1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Elephant", 2, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("JOYERIA C&M");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 26, 228, 37));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 500, 37));
 
         btnAdmin.setContentAreaFilled(false);
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -76,19 +81,22 @@ public class Ventana_principal extends javax.swing.JDialog {
                 btnAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 93, 130, 130));
+        getContentPane().add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 130, 130));
 
-        jLabel4.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Elephant", 2, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Administrador");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 233, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Elephant", 2, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Encargado pedido");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 233, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Elephant", 2, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Trabajador");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 422, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, -1, -1));
 
         btnEncargado.setContentAreaFilled(false);
         btnEncargado.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +104,7 @@ public class Ventana_principal extends javax.swing.JDialog {
                 btnEncargadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEncargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 93, 130, 130));
+        getContentPane().add(btnEncargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 130, 130));
 
         btnTrabajador.setContentAreaFilled(false);
         btnTrabajador.addActionListener(new java.awt.event.ActionListener() {
@@ -104,11 +112,12 @@ public class Ventana_principal extends javax.swing.JDialog {
                 btnTrabajadorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 287, 130, 130));
+        getContentPane().add(btnTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 130, 130));
 
-        jLabel6.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Elephant", 2, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Clientes");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 422, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, -1, -1));
 
         btnClientes.setContentAreaFilled(false);
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +125,7 @@ public class Ventana_principal extends javax.swing.JDialog {
                 btnClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 287, 130, 130));
+        getContentPane().add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 130, 130));
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 153));
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -128,12 +137,18 @@ public class Ventana_principal extends javax.swing.JDialog {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 60, 60));
+
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 600));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 510));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_principal.png"))); // NOI18N
+        lblFondo1.setPreferredSize(new java.awt.Dimension(1200, 600));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1220, 600));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_rosa.png.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 600));
 
         pack();
         setLocationRelativeTo(null);
@@ -237,7 +252,9 @@ public class Ventana_principal extends javax.swing.JDialog {
     private javax.swing.JButton btnEncargado;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTrabajador;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

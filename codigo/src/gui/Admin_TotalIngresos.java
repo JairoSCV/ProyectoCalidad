@@ -44,55 +44,60 @@ public class Admin_TotalIngresos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtCant = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         txtTotal = new javax.swing.JLabel();
-        lblFondo = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("TOTAL DE INGRESOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 27, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 27, 220, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cantidad de Pedidos:  ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 69, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, -1));
 
-        txtCant.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtCant.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
         txtCant.setText("jLabel4");
-        getContentPane().add(txtCant, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 69, -1, -1));
+        getContentPane().add(txtCant, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 60, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Total de Ingresos:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 102, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 150, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtTotal.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        txtTotal.setText("jLabel5");
+        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, -1));
+
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/ok.png"))); // NOI18N
+        jButton2.setText("   OK");
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 145, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 135, 102, 50));
 
-        txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtTotal.setText("jLabel5");
-        getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 102, -1, -1));
-
-        lblFondo.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_general.jpg"))); // NOI18N
-        lblFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 190));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_piel_aux.jpg"))); // NOI18N
+        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 204, 153), null));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 200));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,11 +135,11 @@ public class Admin_TotalIngresos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel txtCant;
     private javax.swing.JLabel txtTotal;
     // End of variables declaration//GEN-END:variables

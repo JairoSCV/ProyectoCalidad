@@ -30,7 +30,6 @@ public class Encarg_EditarEstado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -42,102 +41,97 @@ public class Encarg_EditarEstado extends javax.swing.JFrame {
         txtPeso = new javax.swing.JLabel();
         txtPago = new javax.swing.JLabel();
         boxEntrega = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        lblFondo11 = new javax.swing.JLabel();
-        lblFondo12 = new javax.swing.JLabel();
-
-        jLabel2.setText("jLabel2");
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("EDITAR ESTADO DE FABRICACIÓN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 460, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nº de Boleta:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 54, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 110, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Material:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 87, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 90, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Peso total a usar:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 120, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 120, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Estado de Pago:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 153, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 110, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Estado:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 191, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 70, -1));
 
-        txtNroBoleta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtNroBoleta.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtNroBoleta.setForeground(new java.awt.Color(0, 0, 0));
         txtNroBoleta.setText("jLabel8");
-        getContentPane().add(txtNroBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 54, -1, -1));
+        getContentPane().add(txtNroBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 160, -1));
 
-        txtMaterial.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtMaterial.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtMaterial.setForeground(new java.awt.Color(0, 0, 0));
         txtMaterial.setText("jLabel9");
-        getContentPane().add(txtMaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 87, -1, -1));
+        getContentPane().add(txtMaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 160, -1));
 
-        txtPeso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtPeso.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtPeso.setForeground(new java.awt.Color(0, 0, 0));
         txtPeso.setText("jLabel10");
-        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 120, -1, -1));
+        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 160, -1));
 
-        txtPago.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtPago.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtPago.setForeground(new java.awt.Color(0, 0, 0));
         txtPago.setText("jLabel11");
-        getContentPane().add(txtPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 153, -1, -1));
+        getContentPane().add(txtPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 160, -1));
 
-        boxEntrega.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        boxEntrega.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         boxEntrega.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "POR ENTREGAR", "ENTREGADO" }));
-        getContentPane().add(boxEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 186, 123, -1));
+        getContentPane().add(boxEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 160, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Guardar Cambios");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/guardar.png"))); // NOI18N
+        jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 236, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 80, 80));
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar.png"))); // NOI18N
+        jButton4.setContentAreaFilled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 236, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 80, 80));
 
-        lblFondo11.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 160, 280));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/herramientas.png"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 150, 150));
 
-        lblFondo12.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 280));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_piel.jpg"))); // NOI18N
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int r = JOptionPane.showConfirmDialog(null, "¿Está seguro de editar el estado?");
-        if(r==0){
-            String entrega=boxEntrega.getSelectedItem().toString();
-            Modificar_Trabajo_Entregado(Encarg_PorEntreg.dato);
-            
-            mensaje("ESTADO DE ENTREGA MODIFICADO");
-            this.dispose();
-            Encarg_PorEntreg e=new Encarg_PorEntreg();
-            e.setLocationRelativeTo(null);
-            e.setVisible(true);
-        }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
         void Modificar_Trabajo_Entregado(String n_boleta){
         Conexion cc = new Conexion();
@@ -152,12 +146,27 @@ public class Encarg_EditarEstado extends javax.swing.JFrame {
     }
     
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int r = JOptionPane.showConfirmDialog(null, "¿Está seguro de editar el estado?");
+        if(r==0){
+            String entrega=boxEntrega.getSelectedItem().toString();
+            Modificar_Trabajo_Entregado(Encarg_PorEntreg.dato);
+            
+            mensaje("ESTADO DE ENTREGA MODIFICADO");
+            this.dispose();
+            Encarg_PorEntreg e=new Encarg_PorEntreg();
+            e.setLocationRelativeTo(null);
+            e.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         dispose();
         Encarg_PorEntreg e=new Encarg_PorEntreg();
         e.setLocationRelativeTo(null);
         e.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     void mensaje(String s) {
 	JOptionPane.showMessageDialog(this, s);
@@ -199,17 +208,16 @@ public class Encarg_EditarEstado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxEntrega;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel lblFondo11;
-    private javax.swing.JLabel lblFondo12;
     private javax.swing.JLabel txtMaterial;
     private javax.swing.JLabel txtNroBoleta;
     private javax.swing.JLabel txtPago;

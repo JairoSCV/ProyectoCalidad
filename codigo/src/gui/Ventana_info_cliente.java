@@ -28,6 +28,7 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
                 Telefono = resultado.getString("Telefono_cliente");
                 Correo = resultado.getString("Correo_cliente");
                 txtNombre.setText(Nombres);
+                txtNombre1.setText(Nombres);
                 txtApellido.setText(Apellidos);
                 txtDni.setText(Dni);
                 txtTelef.setText(resultado.getString("Telefono_cliente"));
@@ -100,8 +101,6 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel17 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -132,172 +131,217 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
         txtEstado = new javax.swing.JLabel();
         btnCancelarMontoR = new javax.swing.JButton();
         btnVercomprobante = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        lblFondo10 = new javax.swing.JLabel();
-        lblFondo11 = new javax.swing.JLabel();
-        lblFondo12 = new javax.swing.JLabel();
-        lblFondo13 = new javax.swing.JLabel();
-
-        jLabel17.setText("jLabel17");
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtNombre1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 16)); // NOI18N
-        jLabel1.setText("DATOS DEL CLIENTE");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 28, -1, -1));
-
         jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 16)); // NOI18N
-        jLabel2.setText("DATOS DEL PEDIDO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 30, -1, -1));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("PEDIDO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 100, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 13, 310));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 13, 310));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombres:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 68, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Apellidos:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 101, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("DNI:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Teléfono:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 167, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Correo:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
 
+        txtNombre.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
         txtNombre.setText("jLabel8");
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 68, -1, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
 
+        txtApellido.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtApellido.setForeground(new java.awt.Color(0, 0, 0));
         txtApellido.setText("jLabel9");
-        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 101, -1, -1));
+        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
+        txtDni.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtDni.setForeground(new java.awt.Color(0, 0, 0));
         txtDni.setText("jLabel10");
-        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 134, -1, -1));
+        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
+        txtTelef.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtTelef.setForeground(new java.awt.Color(0, 0, 0));
         txtTelef.setText("jLabel11");
-        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 167, -1, -1));
+        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));
 
+        txtCorreo.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
         txtCorreo.setText("jLabel12");
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 200, -1, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("ID Artículo:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 62, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Talla/Medida:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 95, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Cantidad:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 127, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Material:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 159, -1, -1));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Peso:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 185, -1, -1));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Monto Amortiguado:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 215, -1, -1));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Monto total:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 248, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
 
+        txtArt.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtArt.setForeground(new java.awt.Color(0, 0, 0));
         txtArt.setText("jLabel21");
-        getContentPane().add(txtArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 64, 80, -1));
+        getContentPane().add(txtArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 80, -1));
 
+        txtMed.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtMed.setForeground(new java.awt.Color(0, 0, 0));
         txtMed.setText("jLabel22");
-        getContentPane().add(txtMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 95, 80, -1));
+        getContentPane().add(txtMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 80, -1));
 
+        txtCantidad.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtCantidad.setForeground(new java.awt.Color(0, 0, 0));
         txtCantidad.setText("jLabel23");
-        getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 125, 80, -1));
+        getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 80, -1));
 
+        txtMaterial.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtMaterial.setForeground(new java.awt.Color(0, 0, 0));
         txtMaterial.setText("jLabel24");
-        getContentPane().add(txtMaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 155, 70, -1));
+        getContentPane().add(txtMaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 70, -1));
 
+        txtPeso.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtPeso.setForeground(new java.awt.Color(0, 0, 0));
         txtPeso.setText("jLabel25");
-        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 185, 80, -1));
+        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 80, -1));
 
+        txtMontoA.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtMontoA.setForeground(new java.awt.Color(0, 0, 0));
         txtMontoA.setText("jLabel26");
-        getContentPane().add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 215, 80, -1));
+        getContentPane().add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 80, -1));
 
+        txtMontoT.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtMontoT.setForeground(new java.awt.Color(0, 0, 0));
         txtMontoT.setText("jLabel27");
-        getContentPane().add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 245, -1, -1));
+        getContentPane().add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Candara Light", 1, 16)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("<html>ESTADO DE FABRICACIÓN:</html>");
-        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 280, 84, -1));
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 130, -1));
 
-        txtEstado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtEstado.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        txtEstado.setForeground(new java.awt.Color(0, 0, 0));
         txtEstado.setText("jLabel29");
-        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 280, 110, 20));
+        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 110, 20));
 
-        btnCancelarMontoR.setText("<html><center>Cancelar monto restante</center></html>");
+        btnCancelarMontoR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar_pago.png"))); // NOI18N
         btnCancelarMontoR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarMontoRActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelarMontoR, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 242, 70, -1));
+        getContentPane().add(btnCancelarMontoR, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 100, 90));
 
         btnVercomprobante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnVercomprobante.setText("<html>Vizualizar comprobante de pago</hmtl>");
+        btnVercomprobante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/boleta.png"))); // NOI18N
+        btnVercomprobante.setText("\n");
         btnVercomprobante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVercomprobanteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVercomprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 244, 90, 51));
+        getContentPane().add(btnVercomprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 100, 90));
 
-        jButton3.setText("<  Regresar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 319, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, 90, 40));
 
-        lblFondo10.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 230, 90));
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("BIENVENIDO(A) ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 430, -1));
 
-        lblFondo11.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 300));
+        txtNombre1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        txtNombre1.setText("jLabel8");
+        getContentPane().add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
-        lblFondo12.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 230, 300));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cliente_info.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 150, 150));
 
-        lblFondo13.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 230, 90));
+        jLabel8.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("<html><center>Cancelar monto<p>restante");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Comprobante");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/chica_cliente.png"))); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 410, 440));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/Fondo_Ventana_infocl.jpg"))); // NOI18N
+        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 460));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        dispose();
-        Login_clienteRegistrado lc=new Login_clienteRegistrado();
-        lc.setLocationRelativeTo(null);
-        lc.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnVercomprobanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVercomprobanteActionPerformed
         dispose();
@@ -316,6 +360,13 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
             mensaje("EL PEDIDO YA SE CANCELÓ");
         }
     }//GEN-LAST:event_btnCancelarMontoRActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         dispose();
+        Login_clienteRegistrado lc=new Login_clienteRegistrado();
+        lc.setLocationRelativeTo(null);
+        lc.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     void Datos_Articulo_Pedido(){
         
@@ -323,13 +374,24 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
         Connection cn = cc.conexion();
         
         try{
-            String sentencia_buscar_ArticuloPedido = ("SELECT N_BOLETA, ID_ARTICULO, MEDIDA, MATERIAL, PESO, MONTO_AMORTIGUADO, CANTIDAD, FABRICACION, ENTREGA_TRABAJO, PAGO_ESTADO, ENTREGA_MATERIAL FROM articulo_pedido WHERE N_boleta = '"+Login_clienteRegistrado.N_Boleta+"'");
+            //Datos del pedido
+            String sentencia_buscar_ArticuloPedido = ("SELECT N_BOLETA, SOLICITUD_A, MEDIDA, MATERIAL, PESO, MONTO_AMORTIGUADO, CANTIDAD, FABRICACION, ENTREGA_TRABAJO, PAGO_ESTADO, ENTREGA_MATERIAL FROM articulo_pedido WHERE N_boleta = '"+Login_clienteRegistrado.N_Boleta+"'");
             PreparedStatement pstArticulo_pedido = cn.prepareStatement(sentencia_buscar_ArticuloPedido);
 
             ResultSet resultado_articulopedido = pstArticulo_pedido.executeQuery();
 
             if(resultado_articulopedido.next()){
-                txtArt.setText(resultado_articulopedido.getString("ID_ARTICULO"));
+                //Guardamos el número de solicitud
+                String n_solicitud = resultado_articulopedido.getString("SOLICITUD_A");
+                    String sentencia_buscar_Articulo = ("SELECT SOLICITUD, ID, DIRECCION_CASA, ESTADO FROM DIRECCION WHERE SOLICITUD = '"+n_solicitud+"'");
+                    PreparedStatement pstArticulo = cn.prepareStatement(sentencia_buscar_Articulo);
+                    
+                    ResultSet resultado_articulo = pstArticulo.executeQuery();
+                    
+                    if(resultado_articulo.next()){
+                        txtArt.setText(resultado_articulo.getString("ID"));
+                    }
+                
                 txtMed.setText(resultado_articulopedido.getString("MEDIDA"));
                 txtCantidad.setText(""+resultado_articulopedido.getInt("CANTIDAD"));
                 txtMaterial.setText(resultado_articulopedido.getString("MATERIAL"));
@@ -384,13 +446,15 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarMontoR;
     private javax.swing.JButton btnVercomprobante;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -401,11 +465,9 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFondo10;
-    private javax.swing.JLabel lblFondo11;
-    private javax.swing.JLabel lblFondo12;
-    private javax.swing.JLabel lblFondo13;
     private javax.swing.JLabel txtApellido;
     private javax.swing.JLabel txtArt;
     private javax.swing.JLabel txtCantidad;
@@ -417,6 +479,7 @@ public class Ventana_info_cliente extends javax.swing.JFrame {
     private javax.swing.JLabel txtMontoA;
     private javax.swing.JLabel txtMontoT;
     private javax.swing.JLabel txtNombre;
+    private javax.swing.JLabel txtNombre1;
     private javax.swing.JLabel txtPeso;
     private javax.swing.JLabel txtTelef;
     // End of variables declaration//GEN-END:variables

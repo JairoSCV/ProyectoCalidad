@@ -32,13 +32,11 @@ public class Ventana_Trabajador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         btn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -49,112 +47,106 @@ public class Ventana_Trabajador extends javax.swing.JFrame {
         txtTelef = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        lblFondo10 = new javax.swing.JLabel();
-        lblFondo11 = new javax.swing.JLabel();
-        lblFondo12 = new javax.swing.JLabel();
-        lblFondo13 = new javax.swing.JLabel();
-
-        jLabel12.setText("jLabel12");
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(570, 370));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(590, 370));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BIENVENIDO TRABAJADOR");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 23, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 430, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jLabel2.setText("DATOS DEL USUARIO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 68, -1, -1));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 13, 315));
 
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/registro_ventanaTrabajador.png"))); // NOI18N
         btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActionPerformed(evt);
             }
         });
-        getContentPane().add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 120, 130, 130));
+        getContentPane().add(btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 180, 170));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Registro de Trabajos a Fabricar");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 261, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Nombres:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, -1, -1));
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 100, 11, 211));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Apellidos:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("DNI:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Teléfono:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
 
-        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
         txtNombre.setText("jLabel9");
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 107, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 140, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Correo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
-        txtApe.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtApe.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtApe.setForeground(new java.awt.Color(0, 0, 0));
         txtApe.setText("jLabel10");
-        getContentPane().add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 106, -1));
+        getContentPane().add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 130, -1));
 
-        txtDni.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtDni.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtDni.setForeground(new java.awt.Color(0, 0, 0));
         txtDni.setText("jLabel11");
-        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 106, -1));
+        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 130, -1));
 
-        txtTelef.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtTelef.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtTelef.setForeground(new java.awt.Color(0, 0, 0));
         txtTelef.setText("jLabel13");
-        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 106, -1));
+        getContentPane().add(txtTelef, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 130, -1));
 
-        txtCorreo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtCorreo.setFont(new java.awt.Font("Candara Light", 0, 12)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
         txtCorreo.setText("jLabel14");
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 113, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 160, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Cerrar Sesión");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 319, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 90, 40));
 
-        lblFondo10.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 230, 80));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/trabajador_2.png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 150, 150));
 
-        lblFondo11.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, -1));
-
-        lblFondo12.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 230, -1));
-
-        lblFondo13.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 230, 80));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/Fondo_Ventana_Tbr.jpg"))); // NOI18N
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        jLabel11.setMinimumSize(new java.awt.Dimension(520, 370));
+        jLabel11.setPreferredSize(new java.awt.Dimension(520, 370));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        Login_trabajador lt=new Login_trabajador();
-        lt.setLocationRelativeTo(null);
-        lt.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
         dispose();
@@ -162,6 +154,13 @@ public class Ventana_Trabajador extends javax.swing.JFrame {
         t.setLocationRelativeTo(null);
         t.setVisible(true);
     }//GEN-LAST:event_btnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+        Login_trabajador lt=new Login_trabajador();
+        lt.setLocationRelativeTo(null);
+        lt.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,19 +201,15 @@ public class Ventana_Trabajador extends javax.swing.JFrame {
     private javax.swing.JButton btn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFondo10;
-    private javax.swing.JLabel lblFondo11;
-    private javax.swing.JLabel lblFondo12;
-    private javax.swing.JLabel lblFondo13;
     private javax.swing.JLabel txtApe;
     private javax.swing.JLabel txtCorreo;
     private javax.swing.JLabel txtDni;

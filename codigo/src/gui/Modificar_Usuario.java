@@ -6,6 +6,7 @@
 package gui;
 
 import Conex.Conexion;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -39,6 +40,17 @@ public class Modificar_Usuario extends javax.swing.JFrame {
                 comBox.setSelectedIndex(2);
                 break;
         }
+        
+        //Datos persona
+        TextPrompt prueba = new TextPrompt("8 dígitos",txtDni);
+        TextPrompt prueba1 = new TextPrompt("Obligatorio",txtNombres);
+        TextPrompt prueba2 = new TextPrompt("Obligatorio",txtApellidos);
+        TextPrompt prueba3 = new TextPrompt("Obligatorio",txtCorreo);
+        TextPrompt prueba4 = new TextPrompt("Solo dígitos",txtTelefono);
+        
+        //Datos usuario
+        TextPrompt contra = new TextPrompt("Obligatorio", txtContra);
+        TextPrompt contra1 = new TextPrompt("Obligatorio", txtConfContra);
     }
     
     /**
@@ -51,13 +63,14 @@ public class Modificar_Usuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtNombres = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
@@ -65,92 +78,161 @@ public class Modificar_Usuario extends javax.swing.JFrame {
         txtDni = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         comBox = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         txtContra = new javax.swing.JPasswordField();
         txtConfContra = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        lblFondo1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MODIFICAR USUARIO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 12, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 290, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 80, 80));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar.png"))); // NOI18N
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 80, 80));
+
+        jPanel1.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombres:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 61, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Apellidos:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 98, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel5.setText("Contraseña:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 200, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("DNI:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 61, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Correo:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 98, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Cargo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 134, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel11.setText("Confirmar Contraseña:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 230, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Celular:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 134, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         txtNombres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombresActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 60, 90, -1));
-        getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 97, 90, -1));
-        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 133, 90, -1));
-        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 60, 90, -1));
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 97, 150, -1));
+        txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 150, -1));
+
+        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 150, -1));
+
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 150, -1));
+
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 150, -1));
+
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 150, -1));
 
         comBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         comBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Encargado", "Trabajador" }));
-        getContentPane().add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 130, 108, -1));
-        getContentPane().add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 197, 90, -1));
-        getContentPane().add(txtConfContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 229, 90, -1));
+        jPanel1.add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 150, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jButton1.setText("Confirmar modificación");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 340, 210));
+
+        jPanel2.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Contraseña:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Candara Light", 1, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Confirmar Contraseña:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        txtContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContraKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 186, 178, 40));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 172, 255, 10));
+        jPanel2.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 110, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        txtConfContra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtConfContraKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 244, -1, -1));
+        jPanel2.add(txtConfContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 110, -1));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 290));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 340, 90));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/set_user.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 70, 70));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_reg_pedido.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -252,11 +334,84 @@ public class Modificar_Usuario extends javax.swing.JFrame {
 		JOptionPane.showMessageDialog(this, s);
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
+       dispose();
         Gestionar_Usuarios gu=new Gestionar_Usuarios();
         gu.setLocationRelativeTo(null);
         gu.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+       char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtDni.getText().length() >= 8){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtTelefono.getText().length() >= 9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtNombres.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtNombresKeyTyped
+
+    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtApellidos.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtApellidosKeyTyped
+
+    private void txtCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyTyped
+        if(txtCorreo.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtCorreoKeyTyped
+
+    private void txtContraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraKeyTyped
+        if(txtContra.getText().length() >= 20){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtContraKeyTyped
+
+    private void txtConfContraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConfContraKeyTyped
+        if(txtConfContra.getText().length() >= 20){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtConfContraKeyTyped
 
     /**
      * @param args the command line arguments
@@ -299,15 +454,17 @@ public class Modificar_Usuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFondo1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JPasswordField txtConfContra;
     private javax.swing.JPasswordField txtContra;

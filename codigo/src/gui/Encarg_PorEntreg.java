@@ -4,6 +4,7 @@ package gui;
 import Conex.Conexion;
 import java.awt.Color;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -55,7 +56,15 @@ public class Encarg_PorEntreg extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
                 datos[0] = rs.getString(1);
-                datos[1] = rs.getString(2);
+                
+               String sentencia_buscar_Articulo = ("SELECT SOLICITUD, ID, DIRECCION_CASA, ESTADO from DIRECCION WHERE SOLICITUD = '"+rs.getString(2)+"'");
+               PreparedStatement pstArticulo = cn.prepareStatement(sentencia_buscar_Articulo);
+
+               ResultSet resultado_articulo = pstArticulo.executeQuery();
+
+               if(resultado_articulo.next()){
+                   datos[1] =resultado_articulo.getString("ID");
+               }           
                 datos[2] = rs.getString(3);
                 datos[3] = ""+rs.getInt(7);
                 datos[4] = rs.getString(4);
@@ -85,22 +94,29 @@ public class Encarg_PorEntreg extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPorEntreg = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        lblAdd = new javax.swing.JLabel();
         lblFondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE PEDIDOS POR ENTREGAR");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 19, 449, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 19, 580, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("<html>En esta seccion usted tendrá acceso a un registro de trabajos que no han sido entregados donde  podra editar el registro, pero solo el campo \"ESTADO\", para asi saber si el trabaja esta \"ENTREGADO\" o \"SIN ENTREGAR\".</html>");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 52, 427, 77));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 52, 620, 77));
 
+        tblPorEntreg.setBackground(new java.awt.Color(255, 153, 153));
+        tblPorEntreg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        tblPorEntreg.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         tblPorEntreg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -112,43 +128,43 @@ public class Encarg_PorEntreg extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblPorEntreg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblPorEntreg.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tblPorEntreg);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 135, 696, 266));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("<   Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 419, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 500, 200));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Editar Estado de Entrega");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/editar_entrega.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 70, 191, 35));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 120));
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 90, 40));
+
+        lblAdd.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        lblAdd.setForeground(new java.awt.Color(0, 0, 0));
+        lblAdd.setText("Editar Registro");
+        getContentPane().add(lblAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 130, 20));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 480));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_rosa.png.jpg"))); // NOI18N
+        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 360));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        Ventana_Encargado ve =new Ventana_Encargado();
-        ve.setLocationRelativeTo(null);
-        ve.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
@@ -183,6 +199,13 @@ public class Encarg_PorEntreg extends javax.swing.JFrame {
             mensaje("SELECCIONE UN PEDIDO");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+        Ventana_Encargado ve =new Ventana_Encargado();
+        ve.setLocationRelativeTo(null);
+        ve.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     void mensaje(String s) {
 	JOptionPane.showMessageDialog(this, s);
@@ -224,11 +247,12 @@ public class Encarg_PorEntreg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAdd;
     private javax.swing.JLabel lblFondo1;
     private javax.swing.JTable tblPorEntreg;
     // End of variables declaration//GEN-END:variables

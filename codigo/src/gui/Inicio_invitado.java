@@ -38,24 +38,27 @@ public class Inicio_invitado extends javax.swing.JFrame {
         btnCatalogo = new javax.swing.JButton();
         btnRetro = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        lblFondo = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido, Invitado");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 250, -1));
 
-        jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Catálogo de Artículos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 200, -1));
 
         jLabel2.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Al ingresar como invitado, podrás");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 46, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 220, -1));
 
         btnCatalogo.setContentAreaFilled(false);
         btnCatalogo.addActionListener(new java.awt.event.ActionListener() {
@@ -74,13 +77,13 @@ public class Inicio_invitado extends javax.swing.JFrame {
         getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 259, 60, 40));
 
         jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("acceder al catálogo.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 230, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 55, 250, -1));
 
-        lblFondo.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_general.jpg"))); // NOI18N
-        lblFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 310));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/Fondo_Ventana_Tbr.jpg"))); // NOI18N
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 7));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 310));
 
         pack();
         setLocationRelativeTo(null);
@@ -157,9 +160,9 @@ public class Inicio_invitado extends javax.swing.JFrame {
     private javax.swing.JButton btnCatalogo;
     private javax.swing.JButton btnRetro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lblFondo;
     // End of variables declaration//GEN-END:variables
 }

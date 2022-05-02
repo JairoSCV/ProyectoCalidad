@@ -24,12 +24,8 @@ public class ClienteCatalogo_A extends javax.swing.JFrame {
      */
     public ClienteCatalogo_A() {
         initComponents();
-        FuncionIcono("src/imagenes/A0001.jpg", lblA1);
-        FuncionIcono("src/imagenes/A0002.jpg", lblA2);
-        FuncionIcono("src/imagenes/A0003.jpg", lblA3);
-        FuncionIcono("src/imagenes/A0004.jpg", lblA4);
-        FuncionIcono("src/imagenes/A0005.jpg", lblA5);
-        FuncionIcono("src/imagenes/A0006.jpg", lblA6);
+        
+       lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/bicho_der.jpg")));
         
         grupoDeradios = new ButtonGroup();
         
@@ -52,105 +48,202 @@ public class ClienteCatalogo_A extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator1 = new javax.swing.JSeparator();
-        a1 = new javax.swing.JRadioButton();
-        a3 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
-        a4 = new javax.swing.JRadioButton();
-        a2 = new javax.swing.JRadioButton();
-        a6 = new javax.swing.JRadioButton();
-        lblA2 = new javax.swing.JLabel();
-        lblA1 = new javax.swing.JLabel();
-        lblA4 = new javax.swing.JLabel();
-        a5 = new javax.swing.JRadioButton();
-        lblA6 = new javax.swing.JLabel();
-        lblA3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnRetro = new javax.swing.JButton();
+        lblImagen = new javax.swing.JLabel();
         boton = new javax.swing.JButton();
-        lblA5 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        lblFondo1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        a6 = new javax.swing.JRadioButton();
+        a5 = new javax.swing.JRadioButton();
+        a4 = new javax.swing.JRadioButton();
+        a3 = new javax.swing.JRadioButton();
+        a2 = new javax.swing.JRadioButton();
+        a1 = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("CATALOGO DE ARTICULOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 253, 25));
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 370, 25));
 
+        jLabel2.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Seleccione el artículo de su agrado.");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 51, 322, -1));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 78, 426, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 117, 426, -1));
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 290, -1));
 
-        a1.setText("A0001");
-        getContentPane().add(a1, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 276, -1, -1));
-
-        a3.setText("A0003");
-        getContentPane().add(a3, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 456, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        jLabel4.setText("SECCION ARETES");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 86, -1, -1));
-
-        a4.setText("A0004");
-        getContentPane().add(a4, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 456, -1, -1));
-
-        a2.setText("A0002");
-        getContentPane().add(a2, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 276, -1, -1));
-
-        a6.setText("A0006");
-        getContentPane().add(a6, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 639, -1, -1));
-        getContentPane().add(lblA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 145, 110, 113));
-        getContentPane().add(lblA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 145, 110, 113));
-        getContentPane().add(lblA4, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 325, 110, 113));
-
-        a5.setText("A0005");
-        getContentPane().add(a5, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 639, -1, -1));
-        getContentPane().add(lblA6, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 510, 110, 113));
-        getContentPane().add(lblA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 325, 110, 113));
-
-        jButton1.setText("Regresar página");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRetro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/atras_ventana.png"))); // NOI18N
+        btnRetro.setContentAreaFilled(false);
+        btnRetro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRetroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 699, -1, -1));
+        getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 70, 70));
 
+        lblImagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 190, 180));
+
+        boton.setBackground(new java.awt.Color(255, 204, 153));
+        boton.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        boton.setForeground(new java.awt.Color(0, 0, 0));
         boton.setText("Seleccionar");
+        boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActionPerformed(evt);
             }
         });
-        getContentPane().add(boton, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 699, -1, -1));
-        getContentPane().add(lblA5, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 510, 110, 113));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 685, 438, -1));
+        getContentPane().add(boton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 100, 30));
 
-        lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_catalogo.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 750));
+        jPanel3.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        a6.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a6.setForeground(new java.awt.Color(0, 0, 0));
+        a6.setText("A0006");
+        a6.setContentAreaFilled(false);
+        a6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a6ItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(a6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 90, -1));
+
+        a5.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a5.setForeground(new java.awt.Color(0, 0, 0));
+        a5.setText("A0005");
+        a5.setContentAreaFilled(false);
+        a5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a5ItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(a5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 90, -1));
+
+        a4.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a4.setForeground(new java.awt.Color(0, 0, 0));
+        a4.setText("A0004");
+        a4.setContentAreaFilled(false);
+        a4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a4ItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(a4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 90, -1));
+
+        a3.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a3.setForeground(new java.awt.Color(0, 0, 0));
+        a3.setText("A0003");
+        a3.setContentAreaFilled(false);
+        a3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a3ItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(a3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 90, -1));
+
+        a2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a2.setForeground(new java.awt.Color(0, 0, 0));
+        a2.setText("A0002");
+        a2.setContentAreaFilled(false);
+        a2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a2ItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(a2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 90, -1));
+
+        a1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        a1.setForeground(new java.awt.Color(0, 0, 0));
+        a1.setText("A0001");
+        a1.setContentAreaFilled(false);
+        a1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                a1ItemStateChanged(evt);
+            }
+        });
+        a1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                a1StateChanged(evt);
+            }
+        });
+        a1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(a1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 90, -1));
+
+        jLabel5.setFont(new java.awt.Font("Elephant", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Sección Aretes");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 160, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 310, 260));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_piel_aux.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 380));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetroActionPerformed
         dispose();
         ClienteCatalogo_P ccp = new ClienteCatalogo_P();
         ccp.setLocationRelativeTo(null);
         ccp.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRetroActionPerformed
 
     private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
         if(evt.getSource() == boton){
             valideRadios();
         }
     }//GEN-LAST:event_botonActionPerformed
+
+    private void a6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a6ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0006.jpg")));
+    }//GEN-LAST:event_a6ItemStateChanged
+
+    private void a5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a5ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0005.jpg")));
+    }//GEN-LAST:event_a5ItemStateChanged
+
+    private void a4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a4ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0004.jpg")));
+    }//GEN-LAST:event_a4ItemStateChanged
+
+    private void a3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a3ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0003.jpg")));
+    }//GEN-LAST:event_a3ItemStateChanged
+
+    private void a2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a2ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0002.jpg")));
+    }//GEN-LAST:event_a2ItemStateChanged
+
+    private void a1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_a1ItemStateChanged
+        lblImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes_complementarias/A0001.jpg")));
+    }//GEN-LAST:event_a1ItemStateChanged
+
+    private void a1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_a1StateChanged
+
+    }//GEN-LAST:event_a1StateChanged
+
+    private void a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1ActionPerformed
 
     private void valideRadios(){
         if(a1.isSelected()){
@@ -243,19 +336,12 @@ public class ClienteCatalogo_A extends javax.swing.JFrame {
     private javax.swing.JRadioButton a5;
     private javax.swing.JRadioButton a6;
     private javax.swing.JButton boton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRetro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JLabel lblA1;
-    private javax.swing.JLabel lblA2;
-    private javax.swing.JLabel lblA3;
-    private javax.swing.JLabel lblA4;
-    private javax.swing.JLabel lblA5;
-    private javax.swing.JLabel lblA6;
-    private javax.swing.JLabel lblFondo1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblImagen;
     // End of variables declaration//GEN-END:variables
 }

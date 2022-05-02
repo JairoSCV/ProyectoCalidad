@@ -4,6 +4,7 @@ package gui;
 import Conex.Conexion;
 import java.awt.Color;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,7 +57,16 @@ public class Admin_Registro_Trabajos extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
                 datos[0] = rs.getString(1);
-                datos[1] = rs.getString(2);
+                
+               String sentencia_buscar_Articulo = ("SELECT SOLICITUD, ID, DIRECCION_CASA, ESTADO from DIRECCION WHERE SOLICITUD = '"+rs.getString(2)+"'");
+               PreparedStatement pstArticulo = cn.prepareStatement(sentencia_buscar_Articulo);
+
+               ResultSet resultado_articulo = pstArticulo.executeQuery();
+
+               if(resultado_articulo.next()){
+                   datos[1] =resultado_articulo.getString("ID");
+               }                         
+                
                 datos[2] = rs.getString(3);
                 datos[3] = ""+rs.getInt(7);
                 datos[4] = rs.getString(4);
@@ -82,31 +92,28 @@ public class Admin_Registro_Trabajos extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPed = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
         lblFondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE TRABAJOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 16, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 16, 350, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("<html>A continuación se muestra el registro de trabajos que se encuentran en el sistema.</html>");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 55, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 520, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("<  Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 417, -1, -1));
-
+        tblPed.setBackground(new java.awt.Color(255, 153, 153));
+        tblPed.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        tblPed.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         tblPed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -118,24 +125,35 @@ public class Admin_Registro_Trabajos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblPed.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblPed.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tblPed);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 76, 713, 323));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 76, 713, 250));
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 90, 40));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 460));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_rosa.png.jpg"))); // NOI18N
+        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
-        Ventana_Administrador va=new Ventana_Administrador();
+        Ventana_Administrador va = new Ventana_Administrador();
         va.setLocationRelativeTo(null);
         va.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     void mensaje(String s) {
 	JOptionPane.showMessageDialog(this, s);
@@ -177,7 +195,7 @@ public class Admin_Registro_Trabajos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

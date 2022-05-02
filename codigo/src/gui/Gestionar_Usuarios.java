@@ -7,11 +7,15 @@ package gui;
 
 import Conex.Conexion;
 import java.awt.Color;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +37,10 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
         tblUsu.setBorder(new LineBorder(new Color(0, 0, 0)));
 	tblUsu.setFillsViewportHeight(true);
 	mostrarDatos("");
+      
+        lblAdd.setVisible(false);
+        lblSet.setVisible(false);
+        lblRemove.setVisible(false);
     }
 
     void mostrarDatos(String valor){
@@ -101,45 +109,71 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnSet = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsu = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
+        lblAdd = new javax.swing.JLabel();
+        lblSet = new javax.swing.JLabel();
+        lblRemove = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         lblFondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("GESTIONAR USUARIOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 23, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 23, 340, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Candara Light", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("A continuación seleccione un usuario y escoja la acción a realizar:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 68, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 420, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Adicionar");
-        jButton1.setPreferredSize(new java.awt.Dimension(85, 25));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/mas.png"))); // NOI18N
+        btnAdd.setContentAreaFilled(false);
+        btnAdd.setPreferredSize(new java.awt.Dimension(85, 25));
+        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddMouseExited(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 90, 30));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Modificar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, 100, 30));
+        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 80, 80));
 
-        tblUsu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSet.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/edit.png"))); // NOI18N
+        btnSet.setContentAreaFilled(false);
+        btnSet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSetMouseExited(evt);
+            }
+        });
+        btnSet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 80, 80));
+
+        tblUsu.setBackground(new java.awt.Color(255, 153, 153));
+        tblUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        tblUsu.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         tblUsu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -151,32 +185,58 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblUsu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblUsu.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tblUsu);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 97, 740, 297));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 740, 220));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("Eliminar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        btnRemove.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/cancelar.png"))); // NOI18N
+        btnRemove.setContentAreaFilled(false);
+        btnRemove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRemoveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRemoveMouseExited(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 100, 30));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("< Volver");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRemoveActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 413, -1, -1));
+        getContentPane().add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 80, 80));
+
+        lblAdd.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        lblAdd.setForeground(new java.awt.Color(0, 0, 0));
+        lblAdd.setText("Nuevo usuario");
+        getContentPane().add(lblAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 110, 20));
+
+        lblSet.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        lblSet.setForeground(new java.awt.Color(0, 0, 0));
+        lblSet.setText("Modificar usuario");
+        getContentPane().add(lblSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 130, 20));
+
+        lblRemove.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        lblRemove.setForeground(new java.awt.Color(0, 0, 0));
+        lblRemove.setText("Eliminar usuario");
+        getContentPane().add(lblRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 120, 20));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/off.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 90, 40));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 470));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_rosa.png.jpg"))); // NOI18N
+        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,12 +244,12 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
     void mensaje(String s) {
 		JOptionPane.showMessageDialog(this, s);
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         dispose();
         Agregar_Usuario au=new Agregar_Usuario();
         au.setLocationRelativeTo(null);
         au.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
     public static String id = "";
     public static String nombres = "";
     public static String apellidos = "";
@@ -197,7 +257,7 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
     public static String telefono = "";
     public static String correo = "";
     public static String cargo = "";
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetActionPerformed
         try{
         fila=tblUsu.getSelectedRow();
         if(fila>-1){
@@ -218,16 +278,9 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
         }catch(Exception e){
             mensaje("Seleccione una fila");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSetActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    dispose();
-    Ventana_Administrador va=new Ventana_Administrador();
-    va.setLocationRelativeTo(null);
-    va.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         try{
         int f=tblUsu.getSelectedRow();
 	if(f>-1){
@@ -237,7 +290,7 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
                     Connection cn = cc.conexion();
                     String cod = tblUsu.getValueAt(f,0).toString();
                     try{
-                        PreparedStatement pst = cn.prepareStatement("DELETE FROM usuarios_empresarios WHERE ID_Usuario = '"+cod+"'");
+                        PreparedStatement pst = cn.prepareStatement("DELETE FROM usuarios_empresa WHERE ID_Usuario = '"+cod+"'");
                         pst.executeUpdate();
                         mostrarDatos("");
 			mensaje("USUARIO ELIMINADO");
@@ -252,7 +305,38 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
         }catch(Exception e){
 		mensaje("SELECCIONE UN USUARIO");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    Ventana_Administrador va=new Ventana_Administrador();
+    va.setLocationRelativeTo(null);
+    va.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnAddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseEntered
+        lblAdd.setVisible(true);
+    }//GEN-LAST:event_btnAddMouseEntered
+
+    private void btnAddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseExited
+        lblAdd.setVisible(false);
+    }//GEN-LAST:event_btnAddMouseExited
+
+    private void btnSetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSetMouseEntered
+        lblSet.setVisible(true);
+    }//GEN-LAST:event_btnSetMouseEntered
+
+    private void btnSetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSetMouseExited
+        lblSet.setVisible(false);
+    }//GEN-LAST:event_btnSetMouseExited
+
+    private void btnRemoveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveMouseEntered
+       lblRemove.setVisible(true);
+    }//GEN-LAST:event_btnRemoveMouseEntered
+
+    private void btnRemoveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveMouseExited
+        lblRemove.setVisible(false);
+    }//GEN-LAST:event_btnRemoveMouseExited
 
     /**
      * @param args the command line arguments
@@ -288,17 +372,19 @@ public class Gestionar_Usuarios extends javax.swing.JFrame {
             }
         });
     }
- 
 		
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnSet;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAdd;
     private javax.swing.JLabel lblFondo1;
+    private javax.swing.JLabel lblRemove;
+    private javax.swing.JLabel lblSet;
     private javax.swing.JTable tblUsu;
     // End of variables declaration//GEN-END:variables
 }

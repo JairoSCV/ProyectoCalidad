@@ -67,11 +67,13 @@ public class Ventana_clientes extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seleccionar Opción de Cliente");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 350, -1));
 
         jLabel2.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Seleccione de que manera desea ingresar al sistema:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 360, -1));
 
@@ -92,10 +94,12 @@ public class Ventana_clientes extends javax.swing.JFrame {
         getContentPane().add(btnInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 124, 119));
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Iniciar sesión");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Ingresar");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
 
@@ -124,10 +128,12 @@ public class Ventana_clientes extends javax.swing.JFrame {
         getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 60, 50));
 
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("como invitado");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
 
         lblTextoCliente_invitado.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        lblTextoCliente_invitado.setForeground(new java.awt.Color(0, 0, 0));
         lblTextoCliente_invitado.setText("<html> Seleccionando está opción visualizará nuestro <p>catálogo de artículos.");
         getContentPane().add(lblTextoCliente_invitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 210, 60));
 
@@ -137,9 +143,9 @@ public class Ventana_clientes extends javax.swing.JFrame {
         getContentPane().add(lblSenialar, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 290, 50, 40));
 
         lblFondo1.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/color_ventanas.jpg"))); // NOI18N
-        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 370));
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/Fondo_Ventana_TiposCl.jpg"))); // NOI18N
+        lblFondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 360));
 
         pack();
         setLocationRelativeTo(null);

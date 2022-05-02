@@ -28,21 +28,11 @@ public class Login_trabajador extends javax.swing.JFrame {
         initComponents();
         txtPass_Trabaja.setVisible(true);
         txtPass_Trabaja_Visible.setVisible(false);
-        ImageIcon imagen = new ImageIcon("src/imagenes_interfaces/trabajador.png");
-        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(lblIcono_Trabaja.getWidth(), lblIcono_Trabaja.getHeight(), Image.SCALE_DEFAULT));
-        lblIcono_Trabaja.setIcon(icono);
         
         //boton ver
         btnVer.setIcon(setIcono("/imagenes_interfaces/ver.png", btnVer));
         btnVer.setPressedIcon(setIconoPresionado("/imagenes_interfaces/ver.png", btnVer, 3, 3));
         
-        //boton atras
-        btnAtras.setIcon(setIcono("/imagenes_interfaces/atras.png", btnAtras));
-        btnAtras.setPressedIcon(setIconoPresionado("/imagenes_interfaces/atras.png", btnAtras, 3, 3));
-        
-        //boton ingresar
-        btnIngresar.setIcon(setIcono("/imagenes_interfaces/siguiente.png", btnIngresar));
-        btnIngresar.setPressedIcon(setIconoPresionado("/imagenes_interfaces/siguiente.png", btnIngresar, 9, 9));
     }
 
     /** This method is called from within the constructor to
@@ -73,6 +63,7 @@ public class Login_trabajador extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("ID:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 208, 70, 24));
 
@@ -80,11 +71,13 @@ public class Login_trabajador extends javax.swing.JFrame {
         getContentPane().add(txtUsu_Trabaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 208, 143, -1));
 
         jLabel3.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Contraseña:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 120, -1));
 
         btnIngresar.setBackground(new java.awt.Color(255, 255, 153));
         btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/siguiente.png"))); // NOI18N
         btnIngresar.setContentAreaFilled(false);
         btnIngresar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnIngresar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -93,10 +86,11 @@ public class Login_trabajador extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 275, 70, 70));
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 70, 70));
 
         btnAtras.setBackground(new java.awt.Color(255, 255, 153));
         btnAtras.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/atras.png"))); // NOI18N
         btnAtras.setContentAreaFilled(false);
         btnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -120,13 +114,15 @@ public class Login_trabajador extends javax.swing.JFrame {
         getContentPane().add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 242, -1, 30));
 
         lblIcono_Trabaja.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono_Trabaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/trabajador.png"))); // NOI18N
         lblIcono_Trabaja.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(lblIcono_Trabaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 160, 140));
+        getContentPane().add(lblIcono_Trabaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 160, 160));
 
         txtPass_Trabaja_Visible.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         getContentPane().add(txtPass_Trabaja_Visible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 143, -1));
 
         jLabel1.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Atrás");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 50, 20));
 

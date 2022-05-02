@@ -6,8 +6,8 @@
 package gui;
 
 import Conex.Conexion;
+import java.awt.Toolkit;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +26,20 @@ public class Registro_Pedido extends javax.swing.JFrame {
     public Registro_Pedido() {
         initComponents();
         lblId.setText(Registro_Solicitudes.ID_articulo);
+    
+        //Datos clientes
+        TextPrompt prueba = new TextPrompt("8 dígitos",txtDni);
+        TextPrompt prueba1 = new TextPrompt("Obligatorio",txtNombre);
+        TextPrompt prueba2 = new TextPrompt("Obligatorio",txtApellido);
+        TextPrompt prueba3 = new TextPrompt("Obligatorio",txtCorreo);
+        TextPrompt prueba4 = new TextPrompt("Solo dígitos",txtTelefono);
+        
+        //Datos pedido
+        TextPrompt detalles = new TextPrompt("Medida, número, etc",txtMedida);
+        TextPrompt peso = new TextPrompt("Valores reales(min: 3, máx: 100)",txtPeso);
+        TextPrompt cant = new TextPrompt("Solo dígitos(min: 1, máx: 20)",txtCant);
+        TextPrompt monto_a = new TextPrompt("Solo dígitos(min: 50, máx: 90)",txtMontoA);
+        
     }
 
     /**
@@ -38,211 +52,288 @@ public class Registro_Pedido extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        txtApellido = new javax.swing.JTextField();
         txtDni = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txtMedida = new javax.swing.JTextField();
-        txtTelefono = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtPeso = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         label = new javax.swing.JLabel();
         txtMontoT = new javax.swing.JTextField();
         txtMontoA = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         comBox = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         txtCant = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        lblId = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         label1 = new javax.swing.JLabel();
         cmbAnio = new javax.swing.JComboBox<>();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         cmbMes = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         cmbDia = new javax.swing.JComboBox<>();
-        lblFondo4 = new javax.swing.JLabel();
-        lblFondo5 = new javax.swing.JLabel();
-        lblFondo6 = new javax.swing.JLabel();
-        lblFondo7 = new javax.swing.JLabel();
-        lblFondo8 = new javax.swing.JLabel();
-        lblFondo9 = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        btnReg_Trabajos = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        btnRetro = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE PEDIDOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 12, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 350, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Nombre:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 82, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DNI: ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 82, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 170, -1));
+
+        jLabel2.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Nombres:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 70, -1));
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
+
+        jLabel3.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Apellidos:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 119, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 70, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel5.setText("Teléfono:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 128, -1, -1));
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 170, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Correo: ");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 165, -1, -1));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 80, 94, -1));
-        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 117, 100, -1));
-        getContentPane().add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 80, 102, -1));
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 163, 167, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Talla,Medida:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 307, 81, -1));
-        getContentPane().add(txtMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 305, 151, -1));
-        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 126, 102, -1));
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 170, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel8.setText("Peso (gr.):");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 307, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Teléfono:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 170, -1));
+
+        jLabel9.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("DATOS DEL CLIENTE");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 49, -1, -1));
-        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 305, 98, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 310, 200));
+
+        jPanel2.setBackground(new java.awt.Color(248, 231, 215));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Detalles:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 81, -1));
+
+        txtMedida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMedidaKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 190, -1));
+
+        jLabel8.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Peso c/u(gr.):");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPesoKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 190, -1));
+
+        jLabel11.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Material:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 353, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel13.setText("Monto Total:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 402, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("DATOS DEL PEDIDO");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 227, 218, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 218, 30));
 
-        label.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel13.setText("Monto Total:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
+
+        label.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        label.setForeground(new java.awt.Color(0, 0, 0));
         label.setText("Fecha de pedido:");
-        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 110, -1));
+        jPanel2.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 110, -1));
 
         txtMontoT.setEditable(false);
-        getContentPane().add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 400, 85, -1));
+        jPanel2.add(txtMontoT, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 85, -1));
 
         txtMontoA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMontoAActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 450, 97, -1));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Registrar Pedido");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        txtMontoA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMontoAKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, 141, 43));
+        jPanel2.add(txtMontoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 190, -1));
 
+        comBox.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         comBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORO", "PLATA", "BRONCE" }));
-        getContentPane().add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 348, 100, -1));
+        jPanel2.add(comBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 190, 20));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Cantidad:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 353, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        txtCant.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantKeyTyped(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, -1, -1));
-        getContentPane().add(txtCant, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 351, 98, -1));
+        jPanel2.add(txtCant, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
 
-        jButton3.setText("Calcular presupuesto");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/dinero.png"))); // NOI18N
+        jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 397, 152, -1));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 40, 40));
 
-        lblId.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        getContentPane().add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 268, 85, 19));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("ID del artículo:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 272, 91, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 120, -1));
 
-        label1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        label1.setText("Monto amortiguado:");
-        getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 452, -1, -1));
+        label1.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        label1.setForeground(new java.awt.Color(0, 0, 0));
+        label1.setText("Monto amortiguado(%):");
+        jPanel2.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        cmbAnio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "(----)" }));
-        getContentPane().add(cmbAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 495, 90, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 211, 457, -1));
+        cmbAnio.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
+        cmbAnio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "2030", "2029", "2028", "2027", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "(----)" }));
+        jPanel2.add(cmbAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 90, 20));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel15.setText("/");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 495, 10, 20));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 10, 20));
 
+        cmbMes.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         cmbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
         cmbMes.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbMesItemStateChanged(evt);
             }
         });
-        getContentPane().add(cmbMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 495, 100, -1));
+        jPanel2.add(cmbMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 100, 20));
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel16.setText("/");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 495, 10, 20));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 10, 20));
 
+        cmbDia.setFont(new java.awt.Font("Candara Light", 1, 12)); // NOI18N
         cmbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        getContentPane().add(cmbDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 495, 70, -1));
+        jPanel2.add(cmbDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 70, 20));
 
-        lblFondo4.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 230, 300));
+        lblId.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel2.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 120, 19));
 
-        lblFondo5.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 300));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 500, 280));
 
-        lblFondo6.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 230, 300));
+        btnReg_Trabajos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/registro_traba.png"))); // NOI18N
+        btnReg_Trabajos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReg_TrabajosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReg_TrabajosMouseExited(evt);
+            }
+        });
+        btnReg_Trabajos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReg_TrabajosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnReg_Trabajos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 130, 130));
 
-        lblFondo7.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 230, 300));
+        jLabel17.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Registrar Pedido");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 160, -1));
 
-        lblFondo8.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 50, 300));
+        btnRetro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/retroceder.png"))); // NOI18N
+        btnRetro.setContentAreaFilled(false);
+        btnRetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 60, 60));
 
-        lblFondo9.setBackground(new java.awt.Color(0, 0, 0));
-        lblFondo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_complementarias/fondo_pastel.jpg"))); // NOI18N
-        getContentPane().add(lblFondo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 50, 300));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_interfaces/fondo_reg_pedido.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,10 +357,6 @@ public class Registro_Pedido extends javax.swing.JFrame {
         return txtMedida.getText().trim();
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        RegistrarPedido();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     public double Monto_Total(){
         double presupuesto = 0;
         String s = comBox.getSelectedItem().toString();
@@ -289,13 +376,6 @@ public class Registro_Pedido extends javax.swing.JFrame {
         return presupuesto;
     }
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
-        Registro_Solicitudes rs=new Registro_Solicitudes();
-        rs.setLocationRelativeTo(null);
-        rs.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String s = " ";
         int cantidad = 0;
@@ -328,6 +408,14 @@ public class Registro_Pedido extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    public double Min_Pago(){
+        return 0.5*Monto_Total();
+    }
+    
+    public double Max_Pago(){
+        return 0.9*Monto_Total();
+    }
+    
     private void txtMontoAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMontoAActionPerformed
@@ -358,6 +446,118 @@ public class Registro_Pedido extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_cmbMesItemStateChanged
+
+    private void btnReg_TrabajosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReg_TrabajosMouseEntered
+       
+    }//GEN-LAST:event_btnReg_TrabajosMouseEntered
+    private void btnReg_TrabajosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReg_TrabajosMouseExited
+    }//GEN-LAST:event_btnReg_TrabajosMouseExited
+
+    private void btnReg_TrabajosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReg_TrabajosActionPerformed
+        RegistrarPedido();
+    }//GEN-LAST:event_btnReg_TrabajosActionPerformed
+
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtDni.getText().length() >= 8){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtNombre.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') && (c!=' ')){
+            evt.consume();
+        }
+        
+        if(txtApellido.getText().length() >= 40){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyTyped
+        if(txtCorreo.getText().length() >= 50){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtCorreoKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+        
+        if(txtTelefono.getText().length() >= 9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtMedidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedidaKeyTyped
+        if(txtMedida.getText().length() >= 20){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtMedidaKeyTyped
+
+    private void txtCantKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantKeyTyped
+        char c = evt.getKeyChar();
+        
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantKeyTyped
+
+    private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
+        if(!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar()!='.'){
+            evt.consume();
+        }
+        if(evt.getKeyChar()=='.' && txtPeso.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPesoKeyTyped
+
+    private void txtMontoAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoAKeyTyped
+        if(!Character.isDigit(evt.getKeyChar()) && evt.getKeyChar()!='.'){
+            evt.consume();
+        }
+        if(evt.getKeyChar()=='.' && txtMontoA.getText().contains(".")){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMontoAKeyTyped
+
+    private void btnRetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetroActionPerformed
+        int r = JOptionPane.showConfirmDialog(null, "¿Desea cancelar solicitud?");
+        if(r==0){
+            dispose();
+            Registro_Solicitudes vc = new Registro_Solicitudes();
+            vc.setLocationRelativeTo(null);
+            vc.setVisible(true);
+        }
+    }//GEN-LAST:event_btnRetroActionPerformed
     void mensaje(String s) {
 	JOptionPane.showMessageDialog(this, s);
     }
@@ -379,14 +579,14 @@ public class Registro_Pedido extends javax.swing.JFrame {
                                             if(material.length()>0){
                                                try{
                                                    double peso=Double.parseDouble(txtPeso.getText().trim());
+                                                   if(peso >=3.0 && peso <= 100.0){
                                                try{
                                                        int cantidad = Integer.parseInt(txtCant.getText().trim());
+                                                       if(cantidad >=1 && cantidad<=20){
                                                         try{
                                                               double montoamortiguado=Double.parseDouble(txtMontoA.getText());
-                                                              if(montoamortiguado >= Monto_Total()){
-                                                                  mensaje("No se puede registrar el monto de "+montoamortiguado+" ya que excede o es igual al Monto Total");
-                                                                  txtMontoA.setText("");
-                                                              }else{
+                                                              if(montoamortiguado >= Min_Pago() && montoamortiguado<=Max_Pago()){
+                                                                  ////////
                                                                   String dia_pedido = cmbDia.getSelectedItem().toString();
                                                                   if(dia_pedido.equals("Día")){
                                                                       mensaje("Seleccione un día en específico");
@@ -449,15 +649,16 @@ public class Registro_Pedido extends javax.swing.JFrame {
                                                                                     pst_cliente.setString(3, dni);
                                                                                     pst_cliente.setString(4, telefono);
                                                                                     pst_cliente.setString(5, correo);
-                                                                                    
+                                                                                    System.out.println("a");
                                                                                     //EJECUTAR EL INSERTAR CLIENTE
                                                                                     pst_cliente.executeUpdate();
                                                                                     
+                                                                                    System.out.println("a");
                                                                                     try{
                                                                                         
                                                                                         //MODIFICANDO DIRECCION COMO 'Registrado'
-                                                                                        String articulo=Registro_Solicitudes.ID_articulo;
-                                                                                        PreparedStatement pst_Direccion_modificar = cn.prepareStatement("UPDATE direccion SET Estado ='Registrado' WHERE ID = '"+articulo+"' ");
+                                                                                        String solicitud_number=Registro_Solicitudes.N_Solicitud;
+                                                                                        PreparedStatement pst_Direccion_modificar = cn.prepareStatement("UPDATE direccion SET Estado ='Registrado' WHERE SOLICITUD = '"+solicitud_number+"' ");
                                                                                         
                                                                                         //EJECUTAR EL MODIFICAR DIRECCION
                                                                                         pst_Direccion_modificar.executeUpdate();
@@ -494,30 +695,37 @@ public class Registro_Pedido extends javax.swing.JFrame {
                                                                                            //EJECUTAR EL INSERTAR NUEVO PEDIDO
                                                                                            pst_pedido.executeUpdate();
                                                                                            
-                                                                                           try{
-                                                                                               //CREANDO NUEVO ARTICULO_PEDIDO
-                                                                                            PreparedStatement pst_articulopedido = cn.prepareStatement("INSERT INTO articulo_pedido(N_boleta, ID_articulo, Medida, Material, Peso, Monto_Amortiguado, Cantidad, Fabricacion, Entrega_trabajo, Pago_estado, Entrega_material) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-                                                                                            pst_articulopedido.setString(1,N_boleta);
-                                                                                            pst_articulopedido.setString(2,articulo);
-                                                                                            pst_articulopedido.setString(3,medida_talla);
-                                                                                            pst_articulopedido.setString(4,material);
-                                                                                            pst_articulopedido.setDouble(5,peso);
-                                                                                            pst_articulopedido.setDouble(6,montoamortiguado);
-                                                                                            pst_articulopedido.setInt(7,cantidad);
-                                                                                            pst_articulopedido.setString(8,"SIN FABRICAR");
-                                                                                            pst_articulopedido.setString(9,"POR ENTREGAR");
-                                                                                            pst_articulopedido.setString(10,"SIN CANCELAR");
-                                                                                            pst_articulopedido.setString(11,"SIN ENTREGAR");
+                                                                                           try{                                                                       
+                                                                                                    //CREANDO NUEVO ARTICULO_PEDIDO
+                                                                                                PreparedStatement pst_articulopedido = cn.prepareStatement("INSERT INTO articulo_pedido(N_boleta, Solicitud_A, Medida, Material, Peso, Monto_Amortiguado, Cantidad, Fabricacion, Entrega_trabajo, Pago_estado, Entrega_material) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                                                                                                pst_articulopedido.setString(1,N_boleta);
+                                                                                                pst_articulopedido.setString(2,solicitud_number);
+                                                                                                pst_articulopedido.setString(3,medida_talla);
+                                                                                                pst_articulopedido.setString(4,material);
+                                                                                                
+                                                                                            //Verificamos peso
+                                                                                                pst_articulopedido.setDouble(5,peso);
+                                                                                                
+                                                                                            //Verificamos monto amortiguado
+                                                                                                pst_articulopedido.setDouble(6,montoamortiguado);     
+                                                                                                
+                                                                                                //Verificamos cantidad
+                                                                                                pst_articulopedido.setInt(7,cantidad);
+                                                                                                pst_articulopedido.setString(8,"SIN FABRICAR");
+                                                                                                pst_articulopedido.setString(9,"POR ENTREGAR");
+                                                                                                pst_articulopedido.setString(10,"SIN CANCELAR");
+                                                                                                pst_articulopedido.setString(11,"SIN ENTREGAR");
+
+                                                                                                //EJECUTAR EL INSERTAR NUEVO ARTICULO_PEDIDO
+                                                                                                pst_articulopedido.executeUpdate();
+
                                                                                             
-                                                                                            //EJECUTAR EL INSERTAR NUEVO ARTICULO_PEDIDO
-                                                                                            pst_articulopedido.executeUpdate();
-                                                                                            
-                                                                                            
-                                                                                            mensaje("PEDIDO REGISTRADO");
-                                                                                            dispose();
-                                                                                            Registro_Solicitudes rs=new Registro_Solicitudes();
-                                                                                            rs.setLocationRelativeTo(null);
-                                                                                            rs.setVisible(true);
+                                                                                                mensaje("¡PEDIDO REGISTRADO CON EXITO!\n NRO BOLETA: "+N_boleta+"\nContraseña: "+contrasenia);
+                                                                                                dispose();
+                                                                                                Registro_Solicitudes rs=new Registro_Solicitudes();
+                                                                                                rs.setLocationRelativeTo(null);
+                                                                                                rs.setVisible(true);
+                                                                                                
                                                                                            }catch(SQLException e){
                                                                                                mensaje("No se registro el pedido completo del artículo "+e.getMessage());
                                                                                            }
@@ -533,16 +741,28 @@ public class Registro_Pedido extends javax.swing.JFrame {
                                                                           }
                                                                       }
                                                                   }
+                                                                  
+                                                              }else{
+                                                                  mensaje("El monto amortiguado no cumple con los estándares:\n1. Se cancela como mínimo el 50%.\n2. Se cancela como máximo el 90%.");
+                                                                  txtMontoA.setText("");
                                                               }
                                                               
                                    }catch(Exception e){
                                        mensaje("RELLENE CORRECTAMENTE EL CAMPO MONTO AMORTIGUADO");
                                        label.setText("");
                                    }
+                                        }else{
+                                            mensaje("La cantidad no cumple con los estándares:\n1. Mínimo 1 artículo.\n2. Máximo 20 artículos."); 
+                                            txtCant.setText("");
+                                             }
                                      }catch(Exception e){
                                             mensaje("RELLENE CORRECTAMENTE EL CAMPO CANTIDAD");
                                             txtCant.setText("");
-                                     }     
+                                     }
+                                    }else{
+                                        mensaje("El peso no cumple con los estándares:\n1. Mínimo 3gr.\n2. Máximo 100gr.");
+                                        txtPeso.setText("");
+                                            }
                                 }catch(Exception e){
                                     mensaje("RELLENE CORRECTAMENTE EL CAMPO PESO");
                                     txtPeso.setText("");
@@ -613,12 +833,12 @@ public class Registro_Pedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReg_Trabajos;
+    private javax.swing.JButton btnRetro;
     private javax.swing.JComboBox<String> cmbAnio;
     private javax.swing.JComboBox<String> cmbDia;
     private javax.swing.JComboBox<String> cmbMes;
     private javax.swing.JComboBox<String> comBox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -628,6 +848,8 @@ public class Registro_Pedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -636,15 +858,10 @@ public class Registro_Pedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label1;
-    private javax.swing.JLabel lblFondo4;
-    private javax.swing.JLabel lblFondo5;
-    private javax.swing.JLabel lblFondo6;
-    private javax.swing.JLabel lblFondo7;
-    private javax.swing.JLabel lblFondo8;
-    private javax.swing.JLabel lblFondo9;
     private javax.swing.JLabel lblId;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCant;
